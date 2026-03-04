@@ -21,46 +21,48 @@ code {
 
 @layer base {
     :root {
-        --background: 0 0% 100%;
-        --foreground: 220 13% 18%;
+        /* Fresh & Modern Theme - Light Mode with WARM colors */
+        --background: 0 0% 100%; /* Pure White */
+        --foreground: 220 13% 18%; /* Dark Gray Text */
         --card: 0 0% 100%;
         --card-foreground: 220 13% 18%;
         --popover: 0 0% 100%;
         --popover-foreground: 220 13% 18%;
-        --primary: 189 94% 43%;
+        --primary: 24 95% 53%; /* Warm Orange #F97316 */
         --primary-foreground: 0 0% 100%;
         --secondary: 220 13% 95%;
         --secondary-foreground: 220 13% 18%;
         --muted: 220 13% 95%;
         --muted-foreground: 220 9% 46%;
-        --accent: 189 94% 43%;
+        --accent: 24 95% 53%; /* Warm Orange */
         --accent-foreground: 0 0% 100%;
         --destructive: 0 84% 60%;
         --destructive-foreground: 0 0% 98%;
         --border: 220 13% 91%;
         --input: 220 13% 91%;
-        --ring: 189 94% 43%;
-        --chart-1: 189 94% 43%;
+        --ring: 24 95% 53%;
+        --chart-1: 24 95% 53%;
         --chart-2: 142 76% 36%;
         --chart-3: 262 83% 58%;
         --chart-4: 46 97% 65%;
-        --chart-5: 24 95% 53%;
+        --chart-5: 189 94% 43%;
         --radius: 0.5rem;
     }
     .dark {
+        /* Dark Mode - Vibrant Teal/Cyan */
         --background: 222 47% 11%;
         --foreground: 210 40% 98%;
         --card: 217 33% 17%;
         --card-foreground: 210 40% 98%;
         --popover: 217 33% 17%;
         --popover-foreground: 210 40% 98%;
-        --primary: 189 94% 43%;
+        --primary: 189 94% 43%; /* Vibrant Teal/Cyan #06B6D4 */
         --primary-foreground: 0 0% 100%;
         --secondary: 217 33% 24%;
         --secondary-foreground: 210 40% 98%;
         --muted: 217 33% 24%;
         --muted-foreground: 215 20% 65%;
-        --accent: 189 94% 43%;
+        --accent: 189 94% 43%; /* Vibrant Teal/Cyan */
         --accent-foreground: 0 0% 100%;
         --destructive: 0 63% 31%;
         --destructive-foreground: 210 40% 98%;

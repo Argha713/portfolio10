@@ -17,6 +17,22 @@ const ParticleHero = ({ children }) => {
     canvas.width = width;
     canvas.height = height;
 
+    // Check if dark mode is active
+    const isDarkMode = () => document.documentElement.classList.contains('dark');
+    
+    // Get particle color based on theme
+    const getParticleColor = () => {
+      return isDarkMode() 
+        ? 'rgba(6, 182, 212, 0.6)'    // Teal for dark mode
+        : 'rgba(249, 115, 22, 0.6)';   // Orange for light mode
+    };
+    
+    const getConnectionColor = (opacity) => {
+      return isDarkMode()
+        ? `rgba(6, 182, 212, ${opacity})`    // Teal for dark mode
+        : `rgba(249, 115, 22, ${opacity})`;   // Orange for light mode
+    };
+
     class Particle {
       constructor() {
         this.x = Math.random() * width;
@@ -35,7 +51,7 @@ const ParticleHero = ({ children }) => {
       }
 
       draw() {
-        ctx.fillStyle = 'rgba(6, 182, 212, 0.6)';
+        ctx.fillStyle = getParticleColor();
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fill();
@@ -62,7 +78,7 @@ const ParticleHero = ({ children }) => {
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 150) {
-            ctx.strokeStyle = `rgba(6, 182, 212, ${0.2 * (1 - distance / 150)})`;
+            ctx.strokeStyle = getConnectionColor(0.2 * (1 - distance / 150));
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
@@ -76,7 +92,7 @@ const ParticleHero = ({ children }) => {
         const distance = Math.sqrt(dx * dx + dy * dy);
 
         if (distance < 200) {
-          ctx.strokeStyle = `rgba(6, 182, 212, ${0.3 * (1 - distance / 200)})`;
+          ctx.strokeStyle = getConnectionColor(0.3 * (1 - distance / 200));
           ctx.lineWidth = 2;
           ctx.beginPath();
           ctx.moveTo(p1.x, p1.y);
