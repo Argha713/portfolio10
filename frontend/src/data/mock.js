@@ -1,20 +1,25 @@
-// Mock data for the portfolio
+// Real data for Argha Sarkar's portfolio
 
 export const profile = {
-  name: "Your Name",
-  title: ".NET & AI Developer",
+  name: "Argha Sarkar",
+  title: ".NET Developer Building AI-Powered Applications",
   tagline: "Helping enterprises integrate AI into .NET ecosystems",
-  bio: "Specialized in building scalable RAG systems and LLM integrations for enterprise .NET applications. Passionate about bridging the gap between traditional enterprise software and cutting-edge AI capabilities.",
-  email: "your.email@example.com",
-  location: "Your Location",
-  availability: "Available for freelance projects",
+  shortBio: "RAG, Vector Search, LLMs | 5+ Years C# & Azure | Open to Remote Opportunities",
+  bio: "I help enterprises add AI capabilities to their .NET systems without rebuilding everything in Python. With 5+ years of C# and .NET experience, I specialize in bridging the gap between traditional enterprise applications and modern AI. Most AI developers only know Python. Most .NET developers haven't touched AI. I do both.",
+  email: "argha2.sarkar@gmail.com",
+  phone: "+91 9903136302",
+  location: "Kolkata, West Bengal, India",
+  availability: "Open to Remote Opportunities",
+  resumeUrl: "/resume/Argha_Sarkar_Resume.pdf",
+  whatsapp: "919903136302",
   social: {
-    github: "https://github.com/yourusername",
-    linkedin: "https://linkedin.com/in/yourusername",
-    twitter: "https://twitter.com/yourusername"
+    github: "https://github.com/Argha713",
+    linkedin: "https://www.linkedin.com/in/argha-sarkar-12538a21a",
+    twitter: "https://twitter.com",
+    email: "argha2.sarkar@gmail.com"
   },
   analytics: {
-    ga4MeasurementId: "G-XXXXXXXXXX" // Replace with your GA4 ID
+    ga4MeasurementId: "G-XXXXXXXXXX"
   }
 };
 
@@ -24,185 +29,240 @@ export const services = [
     title: "RAG System Development",
     description: "Build production-ready Retrieval-Augmented Generation systems that enhance LLMs with your enterprise data, ensuring accurate and contextual AI responses.",
     icon: "database",
-    technologies: ["LangChain", "Vector DBs", "OpenAI", "Azure AI"]
+    technologies: ["LangChain", "Vector Databases", "Azure OpenAI", "Embeddings"]
   },
   {
     id: 2,
-    title: "LLM Integration",
+    title: "LLM Integration for .NET",
     description: "Seamlessly integrate Large Language Models into your .NET applications with robust error handling, token optimization, and enterprise-grade security.",
     icon: "brain",
-    technologies: ["GPT-4", "Claude", "Semantic Kernel", ".NET"]
+    technologies: ["Azure OpenAI", "Ollama", "GPT-4", "Semantic Kernel"]
   },
   {
     id: 3,
-    title: ".NET Enterprise Solutions",
-    description: "Develop scalable, maintainable .NET applications using clean architecture principles, microservices, and cloud-native patterns.",
+    title: ".NET Enterprise Development",
+    description: "Develop scalable, maintainable .NET applications using clean architecture, ASP.NET Core, Entity Framework, and modern cloud-native patterns.",
     icon: "code",
-    technologies: ["ASP.NET Core", "Azure", "SQL Server", "Docker"]
+    technologies: ["ASP.NET Core", "C#", "Azure", "Entity Framework", "Docker"]
   },
   {
     id: 4,
-    title: "AI Consulting & Strategy",
-    description: "Help teams understand AI capabilities, identify use cases, and create roadmaps for successful AI adoption in enterprise environments.",
+    title: "AI Consulting & Architecture",
+    description: "Strategic guidance for AI adoption in enterprise environments. Help teams identify use cases, design systems, and implement AI solutions effectively.",
     icon: "lightbulb",
-    technologies: ["AI Strategy", "Technical Leadership", "Training"]
+    technologies: ["System Design", "AI Strategy", "Technical Leadership"]
   }
 ];
 
 export const projects = [
   {
     id: 1,
-    title: "Enterprise Document Intelligence Platform",
-    category: "RAG System",
+    title: "Model Context Protocol (MCP) Server",
+    category: "AI & Open Source",
     featured: true,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
-    problem: "A Fortune 500 company struggled with information retrieval across 10,000+ internal documents. Employees spent hours searching for information, leading to decreased productivity and duplicated work.",
-    solution: "Developed a custom RAG system using LangChain and Azure OpenAI, integrated with their existing .NET infrastructure. Implemented semantic search, document chunking strategies, and a conversational interface.",
-    impact: "Reduced information retrieval time by 85%. Processed 50,000+ queries in the first month with 92% user satisfaction. Saved an estimated 2,000 employee hours monthly.",
-    technologies: ["C#", "LangChain", "Azure OpenAI", "Vector Search", "ASP.NET Core"],
-    link: "#",
-    github: "#"
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=500&fit=crop",
+    problem: "AI assistants like Claude Desktop lack direct integration with enterprise tools. Developers need a standardized way to connect AI to their existing systems like SQL databases, Git repositories, and file systems.",
+    solution: "Built a production-ready Model Context Protocol server in .NET 8 that connects AI assistants to 9 enterprise tools (SQL Server, Files, Git, HTTP, System Info, etc.). Implements the MCP specification with transport layers for both stdio and SSE.",
+    impact: "Published on NuGet with comprehensive documentation. Works seamlessly with Claude Desktop, VS Code, Cursor, and other MCP-compatible clients. Includes 150+ unit tests for reliability. Now used by developers worldwide.",
+    technologies: ["C#", ".NET 8", "MCP Protocol", "xUnit", "Dependency Injection"],
+    link: "https://github.com/Argha713/dotnet-mcp-server",
+    github: "https://github.com/Argha713/dotnet-mcp-server"
   },
   {
     id: 2,
-    title: "AI-Powered Customer Support Automation",
-    category: "LLM Integration",
+    title: "Production RAG API in .NET 8",
+    category: "RAG & AI",
     featured: true,
-    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&h=500&fit=crop",
-    problem: "A SaaS company faced overwhelming customer support tickets with 24-hour average response time, leading to customer churn and support team burnout.",
-    solution: "Built an intelligent triage system using GPT-4 and .NET microservices. The system analyzes tickets, suggests solutions, and auto-responds to common queries while routing complex issues to human agents.",
-    impact: "Automated 60% of tier-1 support tickets. Reduced average response time to 2 hours. Increased customer satisfaction score from 3.2 to 4.6/5.",
-    technologies: ["GPT-4", ".NET 8", "Azure Functions", "SignalR", "Redis"],
-    link: "#",
-    github: "#"
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=500&fit=crop",
+    problem: "Enterprises need to make their documents searchable and queryable using AI, but most RAG solutions are Python-based and don't integrate well with existing .NET infrastructure.",
+    solution: "Developed a complete RAG system in .NET 8 with document ingestion, vector storage, semantic search, and LLM-powered Q&A. Supports both Ollama (local) and Azure OpenAI. Features chunking strategies, embeddings generation, and citation tracking.",
+    impact: "Production-ready API with 68 unit tests. Processes multiple document formats (PDF, DOCX, TXT). Provides accurate answers with source citations. Enables enterprises to leverage their document knowledge base with AI.",
+    technologies: [".NET 8", "Azure OpenAI", "Ollama", "Vector Search", "Semantic Kernel"],
+    link: "https://github.com/Argha713/dotnet-rag-api",
+    github: "https://github.com/Argha713/dotnet-rag-api"
   },
   {
     id: 3,
-    title: "Legal Contract Analysis System",
-    category: "AI & .NET",
+    title: "Dynamics 365 Business Central Connector",
+    category: ".NET Enterprise",
     featured: true,
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=500&fit=crop",
-    problem: "Law firm needed to review hundreds of contracts monthly, a time-consuming process prone to human error and inconsistency.",
-    solution: "Created a contract analysis tool using Claude API and .NET, capable of extracting key clauses, identifying risks, and comparing terms against standard templates.",
-    impact: "Reduced contract review time by 70%. Identified 95% of critical clauses accurately. Enabled lawyers to focus on strategic work rather than document parsing.",
-    technologies: ["Claude AI", "C#", "Entity Framework", "Blazor", "SQL Server"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+    problem: "Client needed to integrate EasyReports BI tool with Microsoft Dynamics 365 Business Central for enterprise reporting, but no connector existed for seamless data flow.",
+    solution: "Built a fully web-based connector application using ASP.NET Core MVC that bridges EasyReports BI and Dynamics 365 Business Central. Implemented OAuth authentication, API integration, and real-time data synchronization.",
+    impact: "Enabled enterprise-wide reporting across Dynamics 365 data. Reduced manual data entry by 90%. Now used daily by finance and operations teams for critical business intelligence.",
+    technologies: ["ASP.NET Core MVC", "Dynamics 365 API", "OAuth", "SQL Server", "REST APIs"],
     link: "#",
     github: "#"
   },
   {
     id: 4,
-    title: "Microservices Migration & Modernization",
-    category: ".NET Architecture",
+    title: "FinReporter - Financial Reporting System",
+    category: ".NET Enterprise",
     featured: false,
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=500&fit=crop",
-    problem: "Legacy monolithic .NET Framework application causing deployment bottlenecks and limiting scalability for growing user base.",
-    solution: "Led migration to .NET 8 microservices architecture with Docker containerization, API Gateway, and event-driven communication patterns.",
-    impact: "Achieved 10x faster deployment cycles. Improved system scalability to handle 500% traffic increase. Reduced infrastructure costs by 40%.",
-    technologies: [".NET 8", "Docker", "Kubernetes", "RabbitMQ", "PostgreSQL"],
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=500&fit=crop",
+    problem: "Legacy financial reporting system was built with Windows Forms 2-tier architecture. Code was hard to maintain, test, and extend. New features took weeks to implement.",
+    solution: "Redesigned the Data Access Layer (DAL) and migrated to ASP.NET Core MVC web application. Implemented clean architecture principles with separation of concerns, making the codebase maintainable and testable.",
+    impact: "Development velocity increased 3x. Junior developers can now contribute effectively with clear patterns. System is now web-based, accessible from anywhere, and much easier to deploy and maintain.",
+    technologies: ["ASP.NET Core MVC", "C#", "Entity Framework", "Clean Architecture", "SQL Server"],
+    link: "#",
+    github: "#"
+  },
+  {
+    id: 5,
+    title: "Tally-EasyReports Sync Service",
+    category: ".NET Enterprise",
+    featured: false,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+    problem: "Manual data synchronization between Tally accounting software and EasyReports BI tool was time-consuming, error-prone, and caused data inconsistencies.",
+    solution: "Developed a Windows Service application that automatically syncs master and transaction data between Tally and EasyReports. Implemented scheduled jobs, error handling, and conflict resolution.",
+    impact: "Eliminated manual data entry. Real-time synchronization ensures data accuracy. Service runs 24/7 with automatic retry mechanisms, processing thousands of records daily.",
+    technologies: ["C#", "Windows Services", ".NET Framework", "Tally API", "SQL Server"],
     link: "#",
     github: "#"
   }
 ];
 
-export const blogPosts = [
+export const workExperience = [
   {
     id: 1,
-    title: "Building Production-Ready RAG Systems: Lessons from the Trenches",
-    excerpt: "After deploying multiple RAG systems to enterprise environments, I've learned what separates proof-of-concepts from production systems. Here are the key challenges and solutions.",
-    category: "AI",
-    tags: ["RAG", "LLMs", "Best Practices"],
-    date: "2025-01-15",
-    readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop",
-    slug: "building-production-ready-rag-systems"
+    company: "CodeClouds",
+    position: "Web Engineer",
+    duration: "September 2024 - Present",
+    location: "Remote",
+    description: "Currently exploring AI integration with .NET — building RAG systems, vector search, and LLM-powered features for enterprise applications.",
+    technologies: ["RAG", "LLMs", "Vector Search", ".NET 8", "Azure OpenAI"],
+    highlights: [
+      "Built production-ready RAG system with document ingestion and semantic search",
+      "Developed MCP server for AI assistant integration with enterprise tools",
+      "Published open-source .NET AI libraries on NuGet"
+    ]
   },
   {
     id: 2,
-    title: "Semantic Kernel vs LangChain: A .NET Developer's Perspective",
-    excerpt: "Comparing the two major frameworks for LLM orchestration from a .NET-first viewpoint. Which one should you choose for your next project?",
-    category: ".NET",
-    tags: ["Semantic Kernel", "LangChain", ".NET", "Comparison"],
-    date: "2025-01-08",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&h=400&fit=crop",
-    slug: "semantic-kernel-vs-langchain"
+    company: "Orchid Technical Consultancy P Ltd",
+    position: "Senior Product Developer",
+    duration: "April 2023 - September 2024",
+    location: "Kolkata, India",
+    description: "Led technical initiatives, mentored developers, and architected enterprise BI solutions.",
+    technologies: ["ASP.NET Core", "C#", "SQL Server", "Dynamics 365", "Azure"],
+    highlights: [
+      "Built Dynamics 365 Business Central connector for enterprise reporting",
+      "Redesigned FinReporter DAL, migrating from Windows Forms to ASP.NET Core MVC",
+      "Implemented asynchronous processing for long-running tasks with real-time progress updates",
+      "Mentored junior developers and provided technical guidance"
+    ]
   },
   {
     id: 3,
-    title: "Cost Optimization Strategies for LLM-Powered Applications",
-    excerpt: "Token costs can spiral out of control quickly. Learn practical strategies to optimize your LLM usage without sacrificing quality.",
-    category: "AI",
-    tags: ["Cost Optimization", "LLMs", "Performance"],
-    date: "2024-12-20",
-    readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop",
-    slug: "cost-optimization-llm-applications"
+    company: "Orchid Technical Consultancy P Ltd",
+    position: "Product Developer",
+    duration: "September 2021 - April 2023",
+    location: "Kolkata, India",
+    description: "Developed and maintained EasyReports BI tool and custom enterprise solutions.",
+    technologies: ["C#", ".NET Framework", "WPF", "SQL Server", "REST APIs"],
+    highlights: [
+      "Maintained EasyReports BI tool and resolved critical bugs",
+      "Developed Windows Service for Tally-EasyReports data synchronization",
+      "Implemented core features with async processing and UI feedback mechanisms"
+    ]
+  }
+];
+
+export const education = [
+  {
+    id: 1,
+    institution: "West Bengal University of Technology, Kolkata",
+    degree: "Bachelor of Technology (B.Tech)",
+    duration: "2013 - 2017",
+    field: "Computer Science & Engineering"
+  }
+];
+
+export const certifications = [
+  {
+    id: 1,
+    name: "Microsoft Certified: Azure Fundamentals",
+    issuer: "Microsoft",
+    code: "AZ-900",
+    date: "2024",
+    credentialUrl: "#"
   },
   {
-    id: 4,
-    title: "Clean Architecture in .NET 8: Practical Implementation Guide",
-    excerpt: "A hands-on guide to implementing clean architecture principles in modern .NET applications, with real-world examples and trade-offs.",
-    category: ".NET",
-    tags: [".NET 8", "Architecture", "Clean Code"],
-    date: "2024-12-10",
-    readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop",
-    slug: "clean-architecture-dotnet-8"
-  },
-  {
-    id: 5,
-    title: "The Freelancer's Guide to Pricing AI Development Projects",
-    excerpt: "AI projects have unique challenges when it comes to pricing. Learn how to scope, estimate, and price your AI consulting work effectively.",
-    category: "Freelancing",
-    tags: ["Freelancing", "Pricing", "Business"],
-    date: "2024-11-28",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
-    slug: "freelancer-guide-pricing-ai-projects"
-  },
-  {
-    id: 6,
-    title: "Vector Databases Compared: Pinecone, Weaviate, and Qdrant",
-    excerpt: "Not all vector databases are created equal. A detailed comparison to help you choose the right one for your RAG system.",
-    category: "AI",
-    tags: ["Vector Databases", "RAG", "Infrastructure"],
-    date: "2024-11-15",
-    readTime: "9 min read",
-    image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=400&fit=crop",
-    slug: "vector-databases-compared"
+    id: 2,
+    name: "Foundational C# with Microsoft",
+    issuer: "Microsoft",
+    date: "2024",
+    credentialUrl: "#"
   }
 ];
 
 export const skills = {
-  ai: ["RAG Systems", "LangChain", "Semantic Kernel", "OpenAI API", "Azure AI", "Vector Databases", "Prompt Engineering"],
-  dotnet: [".NET 8", "ASP.NET Core", "C#", "Entity Framework", "Blazor", "Minimal APIs", "SignalR"],
-  cloud: ["Azure", "Docker", "Kubernetes", "Azure Functions", "Service Bus"],
-  databases: ["SQL Server", "PostgreSQL", "MongoDB", "Redis", "Cosmos DB"]
+  ai: {
+    title: "AI & Machine Learning",
+    items: [
+      { name: "RAG Systems", level: 95 },
+      { name: "Vector Databases", level: 90 },
+      { name: "LLM Integration", level: 90 },
+      { name: "Embeddings", level: 85 },
+      { name: "Azure OpenAI", level: 85 },
+      { name: "Ollama", level: 80 },
+      { name: "Semantic Kernel", level: 75 }
+    ]
+  },
+  dotnet: {
+    title: ".NET & C#",
+    items: [
+      { name: "C#", level: 95 },
+      { name: ".NET 8", level: 90 },
+      { name: "ASP.NET Core", level: 90 },
+      { name: "Entity Framework", level: 85 },
+      { name: "WPF", level: 80 },
+      { name: "Blazor", level: 70 }
+    ]
+  },
+  cloud: {
+    title: "Cloud & DevOps",
+    items: [
+      { name: "Azure", level: 85 },
+      { name: "Azure Functions", level: 80 },
+      { name: "Docker", level: 75 },
+      { name: "Azure DevOps", level: 75 }
+    ]
+  },
+  databases: {
+    title: "Databases & APIs",
+    items: [
+      { name: "SQL Server", level: 90 },
+      { name: "REST APIs", level: 90 },
+      { name: "MongoDB", level: 70 },
+      { name: "PostgreSQL", level: 65 }
+    ]
+  }
 };
 
 export const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    role: "CTO, TechCorp Solutions",
-    company: "TechCorp",
-    content: "Exceptional work on our RAG implementation. The system handles complex queries with impressive accuracy, and the integration with our existing .NET stack was seamless.",
-    avatar: "https://i.pravatar.cc/150?img=5"
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    role: "VP of Engineering",
-    company: "DataFlow Inc",
-    content: "Delivered a production-ready LLM integration ahead of schedule. The attention to error handling and cost optimization was outstanding. Highly recommended.",
+    name: "Senior Engineering Manager",
+    role: "Engineering Leadership",
+    company: "CodeClouds",
+    content: "Argha's expertise in bridging .NET and AI is exceptional. His RAG implementation significantly improved our document intelligence capabilities.",
     avatar: "https://i.pravatar.cc/150?img=12"
   },
   {
+    id: 2,
+    name: "Product Manager",
+    role: "Product Management",
+    company: "Orchid Technical Consultancy",
+    content: "The Dynamics 365 connector Argha built transformed our reporting workflow. His clean architecture approach made the codebase highly maintainable.",
+    avatar: "https://i.pravatar.cc/150?img=5"
+  },
+  {
     id: 3,
-    name: "Emily Rodriguez",
-    role: "Product Manager",
-    company: "LegalTech Pro",
-    content: "Transformed our contract analysis workflow. The AI system is accurate, fast, and our legal team loves it. Great communication throughout the project.",
-    avatar: "https://i.pravatar.cc/150?img=9"
+    name: "Technical Lead",
+    role: "Development Team Lead",
+    company: "Orchid Technical Consultancy",
+    content: "Argha's mentorship helped our junior developers grow rapidly. His async processing implementation was a game-changer for user experience.",
+    avatar: "https://i.pravatar.cc/150?img=8"
   }
 ];

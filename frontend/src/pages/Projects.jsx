@@ -1,18 +1,32 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Filter } from 'lucide-react';
 import { projects } from '../data/mock';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { Button } from '../components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
+import { Tabs, TabsList, TabsTrigger } from '../components/ui/tabs';
 
 const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedTech, setSelectedTech] = useState('all');
 
+  // Get all categories
   const categories = ['all', ...new Set(projects.map(p => p.category))];
-  const filteredProjects = selectedCategory === 'all' 
-    ? projects 
-    : projects.filter(p => p.category === selectedCategory);
+  
+  // Get all unique technologies
+  const allTechnologies = [...new Set(projects.flatMap(p => p.technologies))];
+  const technologies = ['all', ...allTechnologies];
+
+  // Filter projects by category and technology
+  let filteredProjects = projects;
+  
+  if (selectedCategory !== 'all') {
+    filteredProjects = filteredProjects.filter(p => p.category === selectedCategory);
+  }
+  
+  if (selectedTech !== 'all') {
+    filteredProjects = filteredProjects.filter(p => p.technologies.includes(selectedTech));
+  }
 
   return (
     <div className="min-h-screen">
@@ -31,20 +45,63 @@ const Projects = () => {
       {/* Projects Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Category Filter */}
-        <Tabs defaultValue="all" className="mb-12">
-          <TabsList className="grid w-full md:w-auto md:inline-grid grid-cols-2 md:grid-cols-5 gap-2">
-            {categories.map((category) => (
-              <TabsTrigger
-                key={category}
-                value={category}
-                onClick={() => setSelectedCategory(category)}
-                className="capitalize"
+        <div className="mb-8">
+          <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
+            <Filter className="w-4 h-4" />
+            Filter by Category
+          </h3>
+          <Tabs defaultValue="all" className="mb-6">
+            <TabsList className="grid w-full md:w-auto md:inline-grid grid-cols-2 md:grid-cols-auto gap-2">
+              {categories.map((category) => (
+                <TabsTrigger
+                  key={category}
+                  value={category}
+                  onClick={() => setSelectedCategory(category)}
+                  className="capitalize"
+                >
+                  {category}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </Tabs>
+        </div>
+
+        {/* Technology Filter */}
+        <div className="mb-12">
+          <h3 className="text-sm font-semibold mb-3 flex items-center gap-2">
+            <Filter className="w-4 h-4" />
+            Filter by Technology
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {technologies.map((tech) => (
+              <Badge
+                key={tech}
+                variant={selectedTech === tech ? "default" : "outline"}
+                className={`cursor-pointer capitalize transition-all ${
+                  selectedTech === tech 
+                    ? 'bg-primary text-white' 
+                    : 'hover:bg-primary/10'
+                }`}
+                onClick={() => setSelectedTech(tech)}
               >
-                {category}
-              </TabsTrigger>
+                {tech}
+              </Badge>
             ))}
-          </TabsList>
-        </Tabs>
+          </div>
+          {(selectedCategory !== 'all' || selectedTech !== 'all') && (
+            <Button
+              variant="ghost"
+              size="sm"
+              className="mt-4 text-primary hover:text-primary/80"
+              onClick={() => {
+                setSelectedCategory('all');
+                setSelectedTech('all');
+              }}
+            >
+              Clear Filters
+            </Button>
+          )}
+        </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

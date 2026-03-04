@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Moon, Sun, Github, Linkedin, Twitter, Mail, Menu, X } from 'lucide-react';
 import { profile } from '../data/mock';
+import WhatsAppWidget from './WhatsAppWidget';
+import { Toaster } from './ui/toaster';
 
 const Layout = ({ children }) => {
   const [darkMode, setDarkMode] = useState(true);
@@ -31,13 +33,13 @@ const Layout = ({ children }) => {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md">
+      <header className="sticky top-0 z-50 border-b border-border bg-white/80 dark:bg-slate-950/80 backdrop-blur-md">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-teal-600 rounded-lg flex items-center justify-center transform group-hover:scale-105 transition-transform">
-                <span className="text-white font-bold text-xl">{profile.name.charAt(0)}</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center transform group-hover:scale-105 transition-transform">
+                <span className="text-white font-bold text-xl">{profile.name.split(' ').map(n => n[0]).join('')}</span>
               </div>
               <span className="font-semibold text-lg hidden sm:block">{profile.name}</span>
             </Link>
@@ -48,8 +50,8 @@ const Layout = ({ children }) => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`text-sm font-medium transition-colors hover:text-cyan-500 ${
-                    isActive(item.path) ? 'text-cyan-500' : 'text-slate-600 dark:text-slate-300'
+                  className={`text-sm font-medium transition-colors hover:text-primary $
+                    isActive(item.path) ? 'text-primary' : 'text-slate-600 dark:text-slate-300'
                   }`}
                 >
                   {item.name}
@@ -60,7 +62,7 @@ const Layout = ({ children }) => {
                 className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
                 aria-label="Toggle dark mode"
               >
-                {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {darkMode ? <Sun className="w-5 h-5 text-accent" /> : <Moon className="w-5 h-5 text-primary" />}
               </button>
             </div>
 
@@ -94,7 +96,7 @@ const Layout = ({ children }) => {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                       isActive(item.path)
-                        ? 'bg-cyan-500/10 text-cyan-500'
+                        ? 'bg-primary/10 text-primary'
                         : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                     }`}
                   >
@@ -110,17 +112,23 @@ const Layout = ({ children }) => {
       {/* Main Content */}
       <main>{children}</main>
 
+      {/* WhatsApp Widget */}
+      <WhatsAppWidget />
+
+      {/* Toast Notifications */}
+      <Toaster />
+
       {/* Footer */}
-      <footer className="border-t border-slate-200 dark:border-slate-800 mt-20">
+      <footer className="border-t border-border mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* About */}
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">{profile.name}</h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">
-                {profile.tagline}
+              <p className="text-sm text-muted-foreground">
+                {profile.shortBio}
               </p>
-              <p className="text-sm text-slate-600 dark:text-slate-400">
+              <p className="text-sm text-muted-foreground">
                 {profile.availability}
               </p>
             </div>
@@ -133,7 +141,7 @@ const Layout = ({ children }) => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className="text-sm text-slate-600 dark:text-slate-400 hover:text-cyan-500 transition-colors"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -149,7 +157,7 @@ const Layout = ({ children }) => {
                   href={profile.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                  className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 hover:text-primary transition-colors"
                   aria-label="GitHub"
                 >
                   <Github className="w-5 h-5" />
@@ -158,7 +166,7 @@ const Layout = ({ children }) => {
                   href={profile.social.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                  className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 hover:text-primary transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-5 h-5" />
@@ -167,14 +175,14 @@ const Layout = ({ children }) => {
                   href={profile.social.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                  className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 hover:text-primary transition-colors"
                   aria-label="Twitter"
                 >
                   <Twitter className="w-5 h-5" />
                 </a>
                 <a
                   href={`mailto:${profile.email}`}
-                  className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                  className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-primary/10 hover:text-primary transition-colors"
                   aria-label="Email"
                 >
                   <Mail className="w-5 h-5" />
@@ -184,8 +192,8 @@ const Layout = ({ children }) => {
           </div>
 
           {/* Bottom Bar */}
-          <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-800 text-center">
-            <p className="text-sm text-slate-600 dark:text-slate-400">
+          <div className="mt-8 pt-8 border-t border-border text-center">
+            <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} {profile.name}. All rights reserved.
             </p>
           </div>
