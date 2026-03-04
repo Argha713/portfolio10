@@ -6,7 +6,7 @@ import WhatsAppWidget from './WhatsAppWidget';
 import { Toaster } from './ui/toaster';
 
 const Layout = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false); // Default to light mode
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 

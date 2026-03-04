@@ -21,59 +21,57 @@ code {
 
 @layer base {
     :root {
-        /* Modern Professional Theme - Deep Blues with Warm Accents */
         --background: 0 0% 100%;
-        --foreground: 222 47% 11%;
+        --foreground: 220 13% 18%;
         --card: 0 0% 100%;
-        --card-foreground: 222 47% 11%;
+        --card-foreground: 220 13% 18%;
         --popover: 0 0% 100%;
-        --popover-foreground: 222 47% 11%;
-        --primary: 217 91% 60%; /* Vibrant Blue */
+        --popover-foreground: 220 13% 18%;
+        --primary: 189 94% 43%;
         --primary-foreground: 0 0% 100%;
-        --secondary: 210 40% 96%;
-        --secondary-foreground: 222 47% 11%;
-        --muted: 210 40% 96%;
-        --muted-foreground: 215 16% 47%;
-        --accent: 24 95% 53%; /* Warm Orange */
+        --secondary: 220 13% 95%;
+        --secondary-foreground: 220 13% 18%;
+        --muted: 220 13% 95%;
+        --muted-foreground: 220 9% 46%;
+        --accent: 189 94% 43%;
         --accent-foreground: 0 0% 100%;
         --destructive: 0 84% 60%;
         --destructive-foreground: 0 0% 98%;
-        --border: 214 32% 91%;
-        --input: 214 32% 91%;
-        --ring: 217 91% 60%;
-        --chart-1: 217 91% 60%;
-        --chart-2: 24 95% 53%;
-        --chart-3: 142 76% 36%;
-        --chart-4: 262 83% 58%;
-        --chart-5: 46 97% 65%;
+        --border: 220 13% 91%;
+        --input: 220 13% 91%;
+        --ring: 189 94% 43%;
+        --chart-1: 189 94% 43%;
+        --chart-2: 142 76% 36%;
+        --chart-3: 262 83% 58%;
+        --chart-4: 46 97% 65%;
+        --chart-5: 24 95% 53%;
         --radius: 0.5rem;
     }
     .dark {
-        /* Dark Mode - Deep Professional Blues */
-        --background: 222 47% 11%; /* Deep Navy */
+        --background: 222 47% 11%;
         --foreground: 210 40% 98%;
-        --card: 217 33% 17%; /* Darker Blue */
+        --card: 217 33% 17%;
         --card-foreground: 210 40% 98%;
         --popover: 217 33% 17%;
         --popover-foreground: 210 40% 98%;
-        --primary: 217 91% 60%; /* Vibrant Blue */
+        --primary: 189 94% 43%;
         --primary-foreground: 0 0% 100%;
         --secondary: 217 33% 24%;
         --secondary-foreground: 210 40% 98%;
         --muted: 217 33% 24%;
         --muted-foreground: 215 20% 65%;
-        --accent: 24 95% 53%; /* Warm Orange */
+        --accent: 189 94% 43%;
         --accent-foreground: 0 0% 100%;
         --destructive: 0 63% 31%;
         --destructive-foreground: 210 40% 98%;
         --border: 217 33% 24%;
         --input: 217 33% 24%;
-        --ring: 217 91% 60%;
-        --chart-1: 217 91% 60%;
-        --chart-2: 24 95% 53%;
-        --chart-3: 142 76% 45%;
-        --chart-4: 262 83% 65%;
-        --chart-5: 46 97% 70%;
+        --ring: 189 94% 43%;
+        --chart-1: 189 94% 43%;
+        --chart-2: 142 76% 45%;
+        --chart-3: 262 83% 65%;
+        --chart-4: 46 97% 70%;
+        --chart-5: 24 95% 53%;
     }
 }
 
@@ -86,68 +84,6 @@ code {
     }
 }
 
-@layer base {
-    [data-debug-wrapper="true"] {
-        display: contents !important;
-    }
-
-    [data-debug-wrapper="true"] > * {
-        margin-left: inherit;
-        margin-right: inherit;
-        margin-top: inherit;
-        margin-bottom: inherit;
-        padding-left: inherit;
-        padding-right: inherit;
-        padding-top: inherit;
-        padding-bottom: inherit;
-        column-gap: inherit;
-        row-gap: inherit;
-        gap: inherit;
-        border-left-width: inherit;
-        border-right-width: inherit;
-        border-top-width: inherit;
-        border-bottom-width: inherit;
-        border-left-style: inherit;
-        border-right-style: inherit;
-        border-top-style: inherit;
-        border-bottom-style: inherit;
-        border-left-color: inherit;
-        border-right-color: inherit;
-        border-top-color: inherit;
-        border-bottom-color: inherit;
-    }
-}
-
-/* Custom Animations */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-float {
-    animation: float 3s ease-in-out infinite;
-}
-
-.animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
-}
-
-/* Smooth Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -157,21 +93,19 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: hsl(var(--muted));
+    background: hsl(var(--primary) / 0.3);
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--muted-foreground));
+    background: hsl(var(--primary) / 0.5);
 }
 
-/* Selection */
 ::selection {
-    background-color: hsl(var(--primary) / 0.3);
+    background-color: hsl(var(--primary) / 0.2);
     color: inherit;
 }
 
-/* Progress Bar for Blog Reading */
 .reading-progress-bar {
     position: fixed;
     top: 0;
@@ -180,4 +114,8 @@ code {
     background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
     z-index: 1000;
     transition: width 0.1s ease-out;
+}
+
+html {
+    scroll-behavior: smooth;
 }
