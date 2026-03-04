@@ -29,20 +29,16 @@ const ContactForm = () => {
     setLoading(true);
 
     try {
-      // Using Web3Forms (free) - Alternative to EmailJS
+      const formDataToSend = new FormData();
+      formDataToSend.append('access_key', 'fd780a8f-c407-4ceb-9a69-1e792b5806d4');
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('subject', `Portfolio Contact from ${formData.name}`);
+
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // User needs to replace this
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          subject: `Portfolio Contact from ${formData.name}`
-        })
+        body: formDataToSend
       });
 
       const result = await response.json();
@@ -60,7 +56,7 @@ const ContactForm = () => {
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to send message. Please try emailing directly.",
+        description: "Failed to send message. Please try emailing directly at argha2.sarkar@gmail.com",
         variant: "destructive"
       });
     } finally {
